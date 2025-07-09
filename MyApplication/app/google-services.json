@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "530155572269",
+    "firebase_url": "https://bookgpt-e18a5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bookgpt-e18a5",
+    "storage_bucket": "bookgpt-e18a5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530155572269:android:12b8db38c10f735015fca4",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530155572269-02v36equ7jl9ffis4v56bfq1vlq3sghg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxAynZdWJ95U91uiSuuHQLE-EOdEtB-Xw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530155572269-02v36equ7jl9ffis4v56bfq1vlq3sghg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
