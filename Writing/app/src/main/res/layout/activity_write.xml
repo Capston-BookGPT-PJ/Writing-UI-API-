@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+
+    <!-- 상단바 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="20dp"
+            android:gravity="center_vertical">
+
+            <!-- 감상문 작성 제목 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="감상문 작성"
+                android:textColor="@android:color/black"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <!-- 업로드버튼 (맨 오른쪽) -->
+            <View
+                android:layout_width="166dp"
+                android:layout_height="16dp"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:id="@+id/btnUpload"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_upload"
+                android:scaleType="centerInside"
+                android:padding="2dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 중간 영역: 프로필 및 입력 -->
+    <LinearLayout
+        android:id="@+id/middleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <!-- 스크롤 가능한 컨테이너 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+
+                <!-- 프로필 이미지 -->
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/circle_background"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_profile" />
+
+                <!-- 키보드 입력란 (사용자가 텍스트 입력) -->
+                <EditText
+                    android:id="@+id/etInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="독서 후 느낌을 공유해 보세요!"
+                    android:inputType="textMultiLine"
+                    android:maxLines="15"
+                    android:padding="8dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </ScrollView>
+
+
+        <!-- 버튼 및 이미지 영역 (EditText 아래로 이동) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="end|bottom"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/micON"
+                android:layout_width="140dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_mic_on"
+                android:layout_marginEnd="15dp"
+                android:layout_gravity="bottom|center_vertical"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/summarizing"
+                android:layout_width="140dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_summarizing"
+                android:layout_marginEnd="15dp"
+                android:layout_gravity="bottom|center_vertical"
+                android:visibility="gone"/>
+
+
+            <android.widget.Button
+                android:id="@+id/btnSummarize"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="bottom|center_vertical"
+                android:text="요약하기"
+                android:textColor="#000000"
+                android:background="@drawable/rounded_button"
+                android:textSize="15sp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"/>
+
+
+            <!-- 이미지 업로드 -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="20dp"
+                android:scaleType="centerCrop" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 버튼 영역 (항상 화면 하단에 고정) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/bottomLayout"
+        android:layout_gravity="bottom">
+
+        <!-- 가로선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="20dp">
+
+            <!-- 좌측 버튼 (첨부 파일, 좋아요, 해시태그) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/btnAddFile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="첨부 파일 추가"
+                    android:scaleType="centerInside"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_attach" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageButton
+                    android:id="@+id/btnLike"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="좋아요"
+                    android:scaleType="centerInside"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_like" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageButton
+                    android:id="@+id/btnHashtag"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="해시태그 추가"
+                    android:scaleType="centerInside"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_hashtag" />
+            </LinearLayout>
+
+            <!-- 마이크 버튼 (맨 오른쪽) -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:id="@+id/btnRecord"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_mic"
+                android:scaleType="centerInside"
+                android:padding="2dp"
+                android:contentDescription="음성 녹음"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
